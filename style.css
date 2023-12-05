@@ -1,58 +1,88 @@
+/* Base Styles */
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 #game-container {
-    width: 400px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: auto;
     padding: 20px;
-    border: 2px solid #0077cc;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-h1 {
-    color: #d35400;
-    font-size: 2em;
+#player-stats, #enemy-stats, #shop-section {
+    margin-bottom: 20px;
 }
 
-h2 {
-    color: #16a085;
-}
-
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-#player-stats, #enemy-stats, #shop {
-    text-align: left;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #ecf0f1;
-}
-
-#player-stats p, #enemy-stats p, #shop p {
+.stat {
     margin: 10px 0;
 }
 
-#special-cooldown {
-    color: #e74c3c;
+/* Progress Bar Styles */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    text-align: right;
+    padding-right: 5px;
+    box-sizing: border-box;
+    color: white;
+    line-height: 20px; /* Same as height of the bar to vertically center text */
+}
+
+#action-buttons button, #shop-section button {
+    width: 80%;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077cc;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#action-buttons button:hover, #shop-section button:hover {
+    background-color: #005fa3;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Mobile-specific Styles */
+@media screen and (max-width: 600px) {
+    #game-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #action-buttons button, #shop-section button {
+        width: 90%;
+        padding: 15px;
+        margin: 10px 0; /* Larger buttons for easier interaction */
+    }
+
+    #player-stats .stat, #enemy-stats {
+        display: block; /* Stack stats vertically on small screens */
+        margin: 10px 0;
+    }
+
+    #shop-section button {
+        width: 90%; /* Full-width buttons in the shop for easier access */
+        padding: 10px;
+    }
 }
