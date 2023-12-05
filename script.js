@@ -62,17 +62,22 @@ function loadGameState() {
 function checkLevelUp() {
     if (experience >= 100) {
         level++;
-        experience -= 100;
+        experience = 0;
         health = 100;
+        updateDisplay();
     }
 }
 
 function updateDisplay() {
-    document.getElementById('player-health').textContent = health;
+    document.getElementById('player-health').style.width = (health / 100 * 100) + '%';
     document.getElementById('player-gold').textContent = gold;
-    document.getElementById('player-exp').textContent = experience;
+    document.getElementById('player-exp').style.width = (experience / 100 * 100) + '%';
     document.getElementById('player-level').textContent = level;
-    document.getElementById('enemy-health').textContent = enemyHealth;
+
+    const enemy = enemies[currentEnemyIndex];
+    let enemyHealthPercent = (enemyHealth / enemy.health * 100);
+    enemyHealthPercent = enemyHealthPercent < 0 ? 0 : enemyHealthPercent;
+    document.getElementById('enemy-health').style.width = enemyHealthPercent + '%';
 }
 
 function spawnNewEnemy() {
@@ -84,7 +89,7 @@ function spawnNewEnemy() {
 function updateEnemyDisplay() {
     const enemy = enemies[currentEnemyIndex];
     document.getElementById('enemy-name').textContent = enemy.name;
-    document.getElementById('enemy-health').textContent = enemyHealth;
+    document.getElementById('enemy-health').style.width = '100%';
 }
 
 function handleEnemyDefeat() {
