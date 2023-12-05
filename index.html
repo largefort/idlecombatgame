@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Idle Combat Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Idle Combat Game</h1>
+
+        <div id="player-stats">
+            <p>Health: <span id="player-health">100</span></p>
+            <p>Gold: <span id="player-gold">0</span></p>
+            <p>Experience: <span id="player-exp">0</span></p>
+            <p>Level: <span id="player-level">1</span></p>
+        </div>
+
+        <div id="enemy-stats">
+            <h2>Enemy: <span id="enemy-name">Goblin</span></h2>
+            <p>Health: <span id="enemy-health">50</span></p>
+        </div>
+
+        <button id="attack-button">Attack</button>
+        <button id="special-attack-button">Special Attack</button>
+        <p>Special Cooldown: <span id="special-cooldown">0</span> s</p>
+
+        <div id="shop">
+            <h2>Shop</h2>
+            <button id="buy-health-potion">Buy Health Potion (10 Gold)</button>
+            <button id="buy-upgrade">Buy Upgrade (50 Gold)</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
