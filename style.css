@@ -1,0 +1,58 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+#game-container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #0077cc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #d35400;
+    font-size: 2em;
+}
+
+h2 {
+    color: #16a085;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#player-stats, #enemy-stats, #shop {
+    text-align: left;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+}
+
+#player-stats p, #enemy-stats p, #shop p {
+    margin: 10px 0;
+}
+
+#special-cooldown {
+    color: #e74c3c;
+}
