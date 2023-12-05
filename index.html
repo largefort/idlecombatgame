@@ -7,30 +7,57 @@
 </head>
 <body>
     <div id="game-container">
-        <h1>Idle Combat Game</h1>
-
+        <!-- Player Stats -->
         <div id="player-stats">
-            <p>Health: <span id="player-health">100</span></p>
-            <p>Gold: <span id="player-gold">0</span></p>
-            <p>Experience: <span id="player-exp">0</span></p>
-            <p>Level: <span id="player-level">1</span></p>
+            <div class="stat">
+                <label>Health:</label>
+                <div class="progress-bar">
+                    <div class="progress" id="player-health" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <label>Gold:</label>
+                <span id="player-gold">0</span>
+            </div>
+            <div class="stat">
+                <label>Experience:</label>
+                <div class="progress-bar">
+                    <div class="progress" id="player-exp" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <label>Level:</label>
+                <span id="player-level">1</span>
+            </div>
         </div>
 
+        <!-- Enemy Stats -->
         <div id="enemy-stats">
-            <h2>Enemy: <span id="enemy-name">Goblin</span></h2>
-            <p>Health: <span id="enemy-health">50</span></p>
+            <div class="stat">
+                <label>Enemy (Goblin):</label>
+                <div class="progress-bar">
+                    <div class="progress" id="enemy-health" style="width: 100%;"></div>
+                </div>
+            </div>
         </div>
 
-        <button id="attack-button">Attack</button>
-        <button id="special-attack-button">Special Attack</button>
-        <p>Special Cooldown: <span id="special-cooldown">0</span> s</p>
+        <!-- Action Buttons -->
+        <div id="action-buttons">
+            <button id="attack-button">Attack</button>
+            <button id="special-attack-button">Special Attack</button>
+        </div>
 
-        <div id="shop">
-            <h2>Shop</h2>
-            <button id="buy-health-potion">Buy Health Potion (10 Gold)</button>
-            <button id="buy-upgrade">Buy Upgrade (50 Gold)</button>
+        <!-- Shop Section -->
+        <div id="shop-section">
+            <button id="toggle-shop">Shop</button>
+            <div id="shop-items" class="hidden">
+                <button id="buy-health-potion">Health Potion</button>
+                <button id="buy-upgrade">Upgrade</button>
+                <!-- More shop items -->
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
